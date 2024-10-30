@@ -1,93 +1,37 @@
-export const config = {
-  title: "linktreez",
-  footer: "Made using linktreez",
-  url: "https://github.com/engageintellect/linktreez",
-  github: "https://github.com/engageintellect",
+type Config = {
+  title: string;
+  footer: string;
+  url: string;
+  github: string;
 };
 
-export const tagline = ["Software", "Technology", "AI", "Crypto", "Finance"];
+export const config: Config = {
+  title: "The Craft Closet",
+  footer: "Made by Vellapps",
+  url: "https://vellapps.com",
+  github: "https://github.com/vincentvella",
+};
 
-export const items = {
-  bitcoin: {
-    title: "Bitcoin",
-    url: "https://mempool.space/address/bc1qeywstujt6lkvfcwr30kklavr25jxvr7d53jh0j",
-  },
+type Item = {
+  title: string;
+  url: string;
+};
 
-  cashapp: {
-    title: "Cash App",
-    url: "https://cash.app/jc9361",
-  },
-
-  crypto_dashboard: {
-    title: "Crypto Dashboard",
-    url: "https://engage-crypto.vercel.app/",
-  },
-
-  projects: {
-    title: "Projects",
-    url: "https://bento.engage-dev.com/projects",
-  },
-
-  articles: {
-    title: "Articles",
-    url: "https://bento.engage-dev.com/now",
-  },
-
-  stonkai: {
-    title: "StonkAI",
-    url: "https://stonkai.xyz"
-  },
-
-  greymatter: {
-    title: "Grey Matter Extracts",
-    url: "https://shopgme.com",
-  },
-
-  rugged_development: {
-    title: "Rugged Development",
-    url: "https://rugged-development.vercel.app",
-  },
-
-  engage_gpt: {
-    title: "EngageGPT",
-    url: "https://engage-gpt.vercel.app",
-  },
-
-
-  github: {
-    title: "GitHub",
-    url: "https://github.com/engageintellect",
-  },
-
-  medium: {
-    title: "Medium",
-    url: "https://medium.com/@engageintellect",
-  },
-
-  twitter: {
-    title: "Twitter",
-    url: "https://twitter.com/engageintellect",
-  },
-
-  instagram: {
-    title: "Instagram",
-    url: "https://instagram.com/engage_intellect",
+export const items: Record<string, Item> = {
+  tiktok: {
+    title: "Tiktok",
+    url: "https://www.tiktok.com/@thecraftcloset",
   },
   facebook: {
     title: "Facebook",
-    url: "https://www.google.com/search?q=youtube+rick+roll&rlz=1C1YTUH_enUS1029US1029&oq=youtube+rick+roll&aqs=chrome..69i57j69i64.2546j0j7&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:0c2941ce,vid:eBGIQ7ZuuiU",
+    url: "https://www.facebook.com/profile.php?id=61567371376441",
   },
-  youtube: {
-    title: "YouTube",
-    url: "https://www.google.com/search?q=youtube+rick+roll&rlz=1C1YTUH_enUS1029US1029&oq=youtube+rick+roll&aqs=chrome..69i57j69i64.2546j0j7&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:0c2941ce,vid:eBGIQ7ZuuiU",
+  venmo: {
+    title: "Venmo",
+    url: "https://venmo.com/u/Mia-Vella",
   },
-  snapchat: {
-    title: "YouTube",
-    url: "https://www.google.com/search?q=youtube+rick+roll&rlz=1C1YTUH_enUS1029US1029&oq=youtube+rick+roll&aqs=chrome..69i57j69i64.2546j0j7&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:0c2941ce,vid:eBGIQ7ZuuiU",
-  },
-
-  discord: {
-    title: "Discord",
-    url: "https://discordapp.com/users/engage_intellect#1888",
+  paypal: {
+    title: "Paypal",
+    url: "https://www.paypal.com/qrcodes/p2pqrc/4Y9D2WF6MXR2N",
   },
 };

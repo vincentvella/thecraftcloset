@@ -1,7 +1,46 @@
 import "./globals.css";
+import { Metadata } from "next";
 
-import Navbar from "./(components)/Navbar";
 import Footer from "./(components)/Footer";
+import { ThemeProvider } from "next-themes";
+
+export function absoluteUrl(path: string) {
+  return `${process.env?.NEXT_PUBLIC_APP_URL || "http://localhost:3000"}${path}`;
+}
+
+const description = "Local Crafts made in Oxford, PA";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://thecraftcloset.miavella.com"),
+  title: {
+    default: "The Craft Closet",
+    template: "%s | The Craft Closet",
+  },
+  description,
+  openGraph: {
+    title: "The Craft Closet",
+    description,
+    url: absoluteUrl("/"),
+    siteName: "The Craft Closet Links",
+    images: [
+      {
+        url: absoluteUrl("/logo_max.png"),
+        width: 1000,
+        height: 1000,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  icons: {
+    icon: [{ url: "/favicon-32x32.png" }],
+    apple: [{ url: "/apple-touch-icon.png" }],
+  },
+  other: {
+    darkreader: "thecraftcloset-vellapps",
+    "darkreader-lock": "true",
+  },
+};
 
 export default function RootLayout({
   children,
@@ -9,18 +48,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
-      <head />
+    <html lang="en" suppressHydrationWarning className="bg-white dark:bg-black">
+      <head>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body>
-        {/* <Navbar /> */}
-        <div className="min-h-screen bg-gradient-to-t from-zinc-800 to-zinc-900 p-2 md:flex items-center justify-center">
-          {children}
-        </div>
-        <Footer />
+        <ThemeProvider
+          storageKey="theme"
+          defaultTheme="system"
+          enableSystem
+          attribute="data-theme"
+        >
+          <div className="min-h-screen bg-gradient-to-t from-zinc-50 to-zinc-100 dark:from-zinc-800 dark:to-zinc-900 p-2 md:flex items-center justify-center">
+            {children}
+          </div>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
