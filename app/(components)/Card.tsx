@@ -1,7 +1,6 @@
 "use client";
 import { useTheme } from "next-themes";
 import { type PropsWithChildren } from "react";
-import { IconType } from "react-icons";
 
 type CardProps = {
   title: string;
@@ -19,7 +18,6 @@ export default function Card({
   lightColor,
 }: PropsWithChildren<CardProps>) {
   const { resolvedTheme } = useTheme();
-  console.log(Icon);
   return (
     <a
       href={url}
