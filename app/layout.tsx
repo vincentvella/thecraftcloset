@@ -3,10 +3,7 @@ import { Metadata } from "next";
 
 import Footer from "./(components)/Footer";
 import { ThemeProvider } from "next-themes";
-
-export function absoluteUrl(path: string) {
-  return `${process.env?.NEXT_PUBLIC_APP_URL || "http://localhost:3000"}${path}`;
-}
+import { absoluteUrl } from "../lib/absoluteUrl";
 
 const description = "Local Crafts made in Oxford, PA";
 
