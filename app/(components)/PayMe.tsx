@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { FaPaypal } from "react-icons/fa";
 import { items } from "../../data/data";
 
@@ -13,7 +12,7 @@ export default function PayMe() {
           rel="noreferrer"
         >
           <div className="md:group-hover:scale-[110%] transition-transform duration-500">
-            <Image src="/venmo.webp" alt="venmo" width={50} height={50} />
+            <img src="/venmo.webp" alt="venmo" width={50} height={50} />
           </div>
         </a>
         <a

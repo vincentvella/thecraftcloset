@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { config } from "../../data/data";
 
 export default function Footer() {
@@ -8,13 +7,12 @@ export default function Footer() {
         <div className="flex justify-center items-center gap-1 py-2">
           <div>{config.footer}</div>
           <div className="items-center">
-            <Image
+            <img
               src="/vellapps.svg"
               alt="Vellapps Icon"
               className="invert"
               width={25}
               height={25}
-              priority
             />
           </div>
         </div>
